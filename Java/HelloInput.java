@@ -27,6 +27,12 @@ public class HelloInput {
         System.out.println("Your age in months is " + (age * 12) + ".");
 
         // Gets the users two favorite bands.
+        System.out.println("What is your favorite band?");
+        String favBandOne = sc.nextLine();
+        System.out.println("What is your 2nd favorite band?");
+        String favBandTwo = sc.nextLine();
+        System.out.println("I like " + favBandOne + " and " + favBandTwo + " too!");
+
         sc.close();
     }
 }
