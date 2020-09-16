@@ -18,13 +18,14 @@ public class HelloInput {
 
         // Gets the users name and says hello.
         System.out.println("What is your name?");
-        String name = sc.nextLine(); 
+        String name = sc.next(); 
         System.out.println("Hello " + name + "!");
 
         // Gets the users age and then says the age in months.
         System.out.println("How old are you?");
         int age = sc.nextInt();
         System.out.println("Your age in months is " + (age * 12) + ".");
+        sc.nextLine();
 
         // Gets the users two favorite bands.
         System.out.println("What is your favorite band?");
