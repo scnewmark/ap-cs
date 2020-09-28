@@ -11,7 +11,7 @@ public class Invoke {
       double MBForVideos = videos * 89.3;
       double MBForPhotos = photos * 1.72;
       double total = MBForPhotos + MBForSongs + MBForVideos;
-      int GBs = (int) Math.round(total / 1000);
+      int GBs = (int) Math.round(total / 990);
       return GBs;
    }
 }
