@@ -1,4 +1,4 @@
-package Java;
+
 
 public class FirstPractice {
     final static int DAYS_PER_WEEK = 7;

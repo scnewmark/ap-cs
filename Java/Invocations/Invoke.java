@@ -1,4 +1,4 @@
-package Java.Invocations;
+package Invocations;
 
 public class Invoke {
    public static int piggyBank(int pennies, int nickels, int dimes, int quarters, int halfDollars) {

@@ -3,7 +3,6 @@ Enter faucet drips per minute: 3.75
 Enter number of days: 30
 A faucet with 3.75 drips per minute over 30 days will waste 10.700132100396301 gallons of water */
 
-package Java;
 import java.util.Scanner;
 
 public class Drips {

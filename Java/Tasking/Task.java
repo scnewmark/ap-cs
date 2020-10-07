@@ -1,4 +1,4 @@
-package Java.Tasking;
+package Tasking;
 
 public class Task {
 

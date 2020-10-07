@@ -1,4 +1,4 @@
-package Java.Invocations;
+package Invocations;
 
 public class Invocations {
     public static void main(String[] args) {
