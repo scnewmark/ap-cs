@@ -41,7 +41,7 @@ public class InOrder {
         return numThree;
     }
 
-    public boolean inOrder() {
+    public boolean isInOrder() {
         if ((numOne <= numTwo) && (numTwo <= numThree)) {
             return true;
         } else {

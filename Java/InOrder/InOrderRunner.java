@@ -10,7 +10,7 @@ public class InOrderRunner {
         int z = sc.nextInt();
 
         InOrder values = new InOrder(x, y, z);
-        System.out.println("\n" + x + " <= " + y + " <= " + z + " is \n" + values.inOrder());
+        System.out.println("\n" + x + " <= " + y + " <= " + z + " is \n" + values.isInOrder());
         values.orderValues();
         System.out.println("The correct order is " + values.getNumOne() + " <= " + values.getNumTwo() + " <= " + values.getNumThree());
     }
