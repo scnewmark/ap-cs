@@ -4,6 +4,19 @@ import java.util.Scanner;
 
 public class CalculatorRunner {
     final static Scanner sc = new Scanner(System.in);
+
+    static double setOperand(String n) {
+        double num;
+        System.out.println("Enter the " + n + " operand:");
+        try {
+            num = sc.nextInt();
+        } catch (Exception e) {
+            num = sc.nextDouble();
+        }
+        sc.nextLine();
+        return num;
+    }
+
     public static void main(String[] args) {
         double num1;
         double num2;
@@ -17,21 +30,8 @@ public class CalculatorRunner {
             return;
         }
 
-        System.out.println("Enter the first operand:");
-        try {
-            num1 = sc.nextInt();
-        } catch (Exception e) {
-            num1 = sc.nextDouble();
-        }
-        sc.nextLine();
-
-        System.out.println("Enter the second operand:");
-        try {
-            num2 = sc.nextInt();
-        } catch (Exception e) {
-            num2 = sc.nextDouble();
-        }
-        sc.nextLine();
+       num1 = setOperand("first");
+       num2 = setOperand("second");
 
         boolean divBy0 = (operator == '/') && (num2 == 0);
         if (divBy0) {
