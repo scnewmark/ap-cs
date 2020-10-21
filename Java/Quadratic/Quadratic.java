@@ -47,8 +47,8 @@ public class Quadratic {
         if (root1 == null) {
             return equation + " has not been solved yet.";
         }
-        return equation + ((root2 != null) ? 
-            " has two " + (d < 0 ? "imaginary" : "real") + " roots at " + root1 + " & " + root2 + "." : 
+        return equation + ((root2 != null) ?
+            " has two " + (d < 0 ? "imaginary" : "real") + " roots at " + root1 + " & " + root2 + "." :
             " has one " + (d < 0 ? "imaginary " : "") + "root at " + root1 + ".");
     }
 
