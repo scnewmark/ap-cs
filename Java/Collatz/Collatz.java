@@ -3,11 +3,7 @@ package Collatz;
 import java.util.Arrays;
 
 public class Collatz {
-    private int startNum;
-
-    public Collatz() {
-        startNum = 0;
-    }
+    private final int startNum;
 
     public Collatz(int n) {
         startNum = n;
@@ -19,11 +15,10 @@ public class Collatz {
         while (num != 1) {
             if (num % 2 == 0) {
                 num /= 2;
-                steps++;
             } else {
                 num = num * 3 + 1;
-                steps++;
             }
+            steps++;
         }
         return steps;
     }
@@ -66,19 +61,18 @@ public class Collatz {
     public int[] oddValues() {
         int[] sequence = sequence();
         int arrLength = 0;
-        for (int i = 0; i < sequence.length; i++) {
-            if (sequence[i] % 2 != 0) {
+        for (int j : sequence) {
+            if (j % 2 != 0) {
                 arrLength++;
             }
         }
 
         int[] oddValues = new int[arrLength];
-        int oddValsIndex = 0;
-        for (int i = 0; i < sequence.length; i++) {
-            int val = sequence[i];
+        int oddIndex = 0;
+        for (int val: sequence) {
             if (val % 2 != 0) {
-                oddValues[oddValsIndex] = val;
-                oddValsIndex++;
+                oddValues[oddIndex] = val;
+                oddIndex++;
             }
         }
         return oddValues;
@@ -87,8 +81,8 @@ public class Collatz {
     public int sumValues() {
         int[] sequence = sequence();
         int total = 0;
-        for (int i = 0; i < sequence.length; i++) {
-            total += sequence[i];
+        for (int j: sequence) {
+            total += j;
         }
         return total;
     }
