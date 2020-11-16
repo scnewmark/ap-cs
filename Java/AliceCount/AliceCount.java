@@ -12,12 +12,7 @@ public class AliceCount {
         PrintWriter out = new PrintWriter(new FileOutputStream(ROOT_PATH + "out.txt"));
 
         int totalWords = 0;
-
-        double e = 0;
-        double t = 0;
-        double a = 0;
-        double o = 0;
-        double i = 0;
+        double e = 0, t = 0, a = 0, o = 0, i = 0;
 
         while (in.hasNext()) {
             String word = in.next();
