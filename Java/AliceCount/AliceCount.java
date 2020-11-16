@@ -1,7 +1,7 @@
 package AliceCount;
 
-import java.util.Scanner;
 import java.util.regex.*;
+import java.util.*;
 import java.io.*;
 
 public class AliceCount {
@@ -51,21 +51,19 @@ public class AliceCount {
         
         System.out.println("Words with the letter 'e' = " + (int) e);
         System.out.println("Total number of Words = " + totalWords);
-    
-        e = e / totalWords;
-        System.out.println("Percentage of words containing the letter 'e' is " + Math.round(e * 10000.0) / 100.0 + "%");
 
-        t = t / totalWords;
-        System.out.println("Percentage of words containing the letter 't' is " + Math.round(t * 10000.0) / 100.0 + "%");
+        LinkedHashMap<Character, Double> percents = new LinkedHashMap<Character, Double>();
+        percents.put('e', e);
+        percents.put('t', t);
+        percents.put('a', a);
+        percents.put('o', o);
+        percents.put('i', i);
 
-        a = a / totalWords;
-        System.out.println("Percentage of words containing the letter 'a' is " + Math.round(a * 10000.0) / 100.0 + "%");
+        Set<Character> keys = percents.keySet();
+        for (Character key: keys) {
+            System.out.println("Percentage of words containing the letter '" + key + "' is " + Math.round((percents.get(key) / totalWords) * 10000.0) / 100.0 + "%");
+        }
 
-        o = o / totalWords;
-        System.out.println("Percentage of words containing the letter 'o' is " + Math.round(o * 10000.0) / 100.0 + "%");
-
-        i = i / totalWords;
-        System.out.println("Percentage of words containing the letter 'i' is " + Math.round(i * 10000.0) / 100.0 + "%");
         out.close();
 
     }
