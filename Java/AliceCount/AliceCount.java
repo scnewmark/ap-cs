@@ -17,7 +17,7 @@ public class AliceCount {
         while (in.hasNext()) {
             String word = in.next();
 
-            if (match("e", word) || match("t", word) || match("a", word) || match("o", word) || match("i", word)) {
+            if (match("[etaoi]", word)) {
                 if (match("e", word)) { e++; }
                 if (match("t", word)) { t++; }
                 if (match("a", word)) { a++; }
