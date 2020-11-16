@@ -6,7 +6,7 @@ import java.io.*;
 
 public class AliceCount {
     final static String ROOT_PATH = "/Users/scnewmark/Desktop/school/CompSci/Java/AliceCount/";
-    public static boolean match(String s, String m) { return Pattern.compile(s, Pattern.CASE_INSENSITIVE).matcher(m).find(); }
+    public static boolean match(String a, String b) { return Pattern.compile(a, Pattern.CASE_INSENSITIVE).matcher(b).find(); }
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new File(ROOT_PATH + "alice.txt"));
         PrintWriter out = new PrintWriter(new FileOutputStream(ROOT_PATH + "out.txt"));
