@@ -34,16 +34,14 @@ public class AliceCount {
             }
             totalWords++;
         }
-        
+
         System.out.println("Words with the letter 'e' = " + (int) e);
         System.out.println("Total number of Words = " + totalWords);
 
         LinkedHashMap<Character, Double> percents = new LinkedHashMap<Character, Double>();
-        percents.put('e', e);
-        percents.put('t', t);
-        percents.put('a', a);
-        percents.put('o', o);
-        percents.put('i', i);
+        Character[] chars = { 'e', 't', 'a', 'o', 'i' };
+        Double[] doubles = { e, t, a, o, i };
+        for (int index = 0; index < chars.length; index++) { percents.put(chars[index], doubles[index]); }
 
         Set<Character> keys = percents.keySet();
         for (Character key: keys) { System.out.println("Percentage of words containing the letter '" + key + "' is " + Math.round((percents.get(key) / totalWords) * 10000.0) / 100.0 + "%"); }
