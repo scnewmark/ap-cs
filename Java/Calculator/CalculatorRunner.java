@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CalculatorRunner {
     final static Scanner sc = new Scanner(System.in);
 
-    static double setOperand(String n) {
+    private static double setOperand(String n) {
         double num;
         System.out.println("Enter the " + n + " operand:");
         try {
@@ -17,15 +17,25 @@ public class CalculatorRunner {
         return num;
     }
 
+    private static boolean isValidOperator(char c) {
+        char[] validOperators = { '+', '-', '*', '/' };
+        for (int i: validOperators) {
+            if (i == c) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public static void main(String[] args) {
         double num1;
         double num2;
         char operator;
 
-        System.out.println("Enter the operator:");
+        System.out.print("Enter the operator: ");
         operator = sc.next().charAt(0);
-        boolean validOperator = (operator == '+') || (operator == '-') || (operator == '*') || (operator == '/');
-        if (!validOperator) {
+        if (!isValidOperator(operator)) {
             System.out.println("Invalid Operator");
             return;
         }
