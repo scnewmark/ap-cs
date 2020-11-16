@@ -1,6 +1,7 @@
 package Collatz;
 
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Collatz {
     private final int startNum;
@@ -37,7 +38,6 @@ public class Collatz {
             }
             arr[i] = num;
         }
-        // arr[steps()] = 1;
         return arr;
     }
 
@@ -60,22 +60,13 @@ public class Collatz {
 
     public int[] oddValues() {
         int[] sequence = sequence();
-        int arrLength = 0;
-        for (int j : sequence) {
-            if (j % 2 != 0) {
-                arrLength++;
-            }
-        }
-
-        int[] oddValues = new int[arrLength];
-        int oddIndex = 0;
+        ArrayList<Integer> oddValues = new ArrayList<Integer>();
         for (int val: sequence) {
             if (val % 2 != 0) {
-                oddValues[oddIndex] = val;
-                oddIndex++;
+                oddValues.add(val);
             }
         }
-        return oddValues;
+        return oddValues.stream().mapToInt(i -> i).toArray();
     }
 
     public int sumValues() {
