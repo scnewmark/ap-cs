@@ -6,6 +6,7 @@ import java.io.*;
 
 public class AliceCount {
     final static String ROOT_PATH = "/Users/scnewmark/Desktop/school/CompSci/Java/AliceCount/";
+    public static boolean match(String s, String m) { return Pattern.compile(s, Pattern.CASE_INSENSITIVE).matcher(m).find(); }
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new File(ROOT_PATH + "alice.txt"));
         PrintWriter out = new PrintWriter(new FileOutputStream(ROOT_PATH + "out.txt"));
@@ -21,28 +22,13 @@ public class AliceCount {
         while (in.hasNext()) {
             String word = in.next();
 
-            boolean containsE = Pattern.compile("e", Pattern.CASE_INSENSITIVE).matcher(word).find();
-            boolean containsT = Pattern.compile("t", Pattern.CASE_INSENSITIVE).matcher(word).find();
-            boolean containsA = Pattern.compile("a", Pattern.CASE_INSENSITIVE).matcher(word).find();
-            boolean containsO = Pattern.compile("o", Pattern.CASE_INSENSITIVE).matcher(word).find();
-            boolean containsI = Pattern.compile("i", Pattern.CASE_INSENSITIVE).matcher(word).find();
+            if (match("e", word) || match("t", word) || match("a", word) || match("o", word) || match("i", word)) {
+                if (match("e", word)) { e++; }
+                if (match("t", word)) { t++; }
+                if (match("a", word)) { a++; }
+                if (match("o", word)) { o++; }
+                if (match("i", word)) { i++; }
 
-            if (containsE || containsT || containsA || containsO || containsI) {
-                if (containsE) {
-                    e++;
-                }
-                if (containsT) {
-                    t++;
-                }
-                if (containsA) {
-                    a++;
-                }
-                if (containsO) {
-                    o++;
-                }
-                if (containsI) {
-                    i++;
-                }
                 word = Pattern.compile("[^a-z\\-]", Pattern.CASE_INSENSITIVE).matcher(word).replaceAll("");
                 out.println(word);
             }
@@ -60,9 +46,7 @@ public class AliceCount {
         percents.put('i', i);
 
         Set<Character> keys = percents.keySet();
-        for (Character key: keys) {
-            System.out.println("Percentage of words containing the letter '" + key + "' is " + Math.round((percents.get(key) / totalWords) * 10000.0) / 100.0 + "%");
-        }
+        for (Character key: keys) { System.out.println("Percentage of words containing the letter '" + key + "' is " + Math.round((percents.get(key) / totalWords) * 10000.0) / 100.0 + "%"); }
 
         out.close();
 
