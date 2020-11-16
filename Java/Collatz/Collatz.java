@@ -61,9 +61,9 @@ public class Collatz {
     public int[] oddValues() {
         int[] sequence = sequence();
         ArrayList<Integer> oddValues = new ArrayList<Integer>();
-        for (int val: sequence) {
-            if (val % 2 != 0) {
-                oddValues.add(val);
+        for (int i: sequence) {
+            if (i % 2 != 0) {
+                oddValues.add(i);
             }
         }
         return oddValues.stream().mapToInt(i -> i).toArray();
@@ -72,8 +72,8 @@ public class Collatz {
     public int sumValues() {
         int[] sequence = sequence();
         int total = 0;
-        for (int j: sequence) {
-            total += j;
+        for (int i: sequence) {
+            total += i;
         }
         return total;
     }
