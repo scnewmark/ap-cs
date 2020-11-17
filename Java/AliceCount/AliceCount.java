@@ -9,7 +9,7 @@ public class AliceCount {
     public static boolean match(String a, String b) { return Pattern.compile(a, Pattern.CASE_INSENSITIVE).matcher(b).find(); }
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new File(ROOT_PATH + "alice.txt"));
-        PrintWriter out = new PrintWriter(new FileOutputStream(ROOT_PATH + "out.txt"));
+        PrintWriter out = new PrintWriter(new FileOutputStream(ROOT_PATH + "words.txt"));
 
         int totalWords = 0;
         double e = 0, t = 0, a = 0, o = 0, i = 0;
@@ -42,6 +42,5 @@ public class AliceCount {
         for (Character key: keys) { System.out.println("Percentage of words containing the letter '" + key + "' is " + Math.round((percents.get(key) / totalWords) * 10000.0) / 100.0 + "%"); }
 
         out.close();
-
     }
 }
