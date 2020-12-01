@@ -38,7 +38,7 @@ public class WordSearch {
 
             inGrid = Pattern.compile(s, Pattern.CASE_INSENSITIVE).matcher(temp).find();
             if (inGrid == true) return true;
-            
+
             temp = this.reverseString(temp);
             inGrid = Pattern.compile(s, Pattern.CASE_INSENSITIVE).matcher(temp).find();
             if (inGrid == true) return true;
@@ -53,7 +53,14 @@ public class WordSearch {
         return sb.toString();
     }
 
+    @Override
     public String toString() {
-        return Arrays.deepToString(this.arr).replace("], ", "]\n");
+        return Arrays.deepToString(this.arr)
+            .replace("], ", "]\n")
+            .replace(",", " ")
+            .replace("[", "[ ")
+            .replace("]", " ]")
+            .replace("[ [ ", "[ ")
+            .replace("] ]", "]");
     }
 }

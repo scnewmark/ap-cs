@@ -29,6 +29,7 @@ public class WordSearchRunner {
         }
         System.out.println("Done with array");
 
+        System.out.println(ws);
         while (in.hasNext()) {
             if (in.hasNextInt()) in.next();
             String str = in.next();
