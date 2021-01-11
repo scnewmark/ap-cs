@@ -16,7 +16,7 @@ public final class Playlist {
     // Modifiers
     public void setList(final int size) { this.list = new Song[size]; }
 
-    public void addSong(int x, Song s) {
+    public void addSong(final int x, final Song s) {
         if (x < this.list.length && this.list[x] == null) this.list[x] = s;
         else {
             final Song[] list = new Song[this.list.length + 1];
@@ -92,7 +92,7 @@ public final class Playlist {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         Playlist p = (Playlist) o;
         if (!Arrays.equals(this.list, p.getList())) {
             return false;
