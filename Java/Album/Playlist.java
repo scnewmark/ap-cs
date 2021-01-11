@@ -93,7 +93,7 @@ public final class Playlist {
 
     @Override
     public boolean equals(final Object o) {
-        Playlist p = (Playlist) o;
+        final Playlist p = (Playlist) o;
         if (!Arrays.equals(this.list, p.getList())) {
             return false;
         }
