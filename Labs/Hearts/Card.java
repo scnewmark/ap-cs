@@ -34,7 +34,7 @@ public final class Card implements Comparable<Object> {
     @Override
     public boolean equals(final Object o) {
         final Card card = (Card) o;
-        return card.getName().equals(this.name) && card.sortRank() == this.sortRank() && card.suit.equals(this.suit);
+        return card.getName().equals(this.name) && card.sortRank() == this.sortRank() && card.getSuit().equals(this.suit);
     }
 
     @Override
