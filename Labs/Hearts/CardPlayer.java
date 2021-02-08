@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CardPlayer extends Player {
-    private ArrayList<Card> hand;
-    private ArrayList<Card> takenCards;
+    private ArrayList<Card> hand, takenCards;
 
     public CardPlayer(final String n, final int s, final ArrayList<Card> h) {
         super(n, s);
