@@ -47,6 +47,6 @@ public final class Card implements Comparable<Object> {
 
     @Override
     public String toString() {
-        return String.format("%s%s(%d)", this.suit.charAt(0), this.name.charAt(0), this.rank);
+        return String.format("%s%s(%d)", this.suit.charAt(0), this.name, this.rank);
     }
 }
