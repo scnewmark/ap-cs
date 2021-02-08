@@ -16,11 +16,9 @@ public class CardPlayer extends Player {
         this.takenCards = new ArrayList<Card>();
     }
 
-    // Accessors
     public ArrayList<Card> getHand() { return this.hand; }
     public ArrayList<Card> getTakenCards() { return this.takenCards; }
 
-    // Modifiers
     public void setHand(final ArrayList<Card> h) { this.hand = h; }
     public void setTakenCards(final ArrayList<Card> t) { this.takenCards = t; }
 
