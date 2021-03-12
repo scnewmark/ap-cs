@@ -56,7 +56,7 @@ public class CardPlayer extends Player {
             return c;
         }
 
-        final int i = (int) (Math.random() * (this.hand.size() + 1));
+        final int i = (int) (Math.random() * this.hand.size());
         final Card c = this.hand.get(i); this.hand.remove(c);
         return c;
     }
