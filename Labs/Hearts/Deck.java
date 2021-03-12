@@ -1,6 +1,7 @@
 package Labs.Hearts;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public final class Deck {
     private final String[] names = {"2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"};
@@ -34,15 +35,7 @@ public final class Deck {
     }
 
     public void shuffle() {
-        for (int i = 0; i < 20; i++) {
-            final int numToShuffle = 2 + (int)(Math.random() * ((10 - 2) + 1));
-            final int insertionIndex = 0 + (int)(Math.random() * ((40 - 0) + 1));
-            final ArrayList<Card> toShuffle = new ArrayList<Card>();
-            for (int j = 0; j < numToShuffle; j++) {
-                toShuffle.add(this.dealTopCard());
-            }
-            this.deck.addAll(insertionIndex, toShuffle);
-        }
+        Collections.shuffle(this.deck);
     }
 
     @Override
