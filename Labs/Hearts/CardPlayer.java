@@ -30,8 +30,12 @@ public class CardPlayer extends Player {
     }
 
     public Card chooseCard(final ArrayList<Card> r, final ArrayList<Card> g) {
-        final Card twoOfClubs = new Card("2", "clubs", 2);
-        if (this.hand.contains(twoOfClubs)) { this.hand.remove(twoOfClubs); return twoOfClubs; }
+        for (final Card c : this.hand) {
+            if (c.getSuit() == "clubs" && c.getName() == "2" && c.getRank() == 2) {
+                this.hand.remove(c);
+                return c;
+            }
+        }
 
         if (r.isEmpty()) {
             final int i = (int) (Math.random() * ((this.hand.size() - 1) + 1));

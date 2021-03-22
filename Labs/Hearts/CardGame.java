@@ -26,6 +26,7 @@ public class CardGame {
     // Accessors
     public Deck getDeckOfCards() { return this.deckOfCards; }
     public String getNameOfGame() { return this.nameOfGame; }
+    public CardPlayer getPlayer(final int i) { return this.players.get(i); }
     public ArrayList<CardPlayer> getPlayers() { return this.players; }
     public int getNumberOfPlayers() { return this.numberOfPlayers; }
     public int getCurrentPlayer() { return this.currentPlayer; }
@@ -37,22 +38,14 @@ public class CardGame {
     public void setNumberOfPlayers(final int num) { this.numberOfPlayers = num; }
     public void setCurrentPlayer(final int index) { this.currentPlayer = index; }
 
-    private void deal(final int cardCount, final int index) {
+    public void deal(final int cardCount, final int index) {
         for (int dealt = 0; dealt < cardCount; dealt++) {
             final Card c = this.deckOfCards.dealTopCard();
             this.players.get(index).addCard(c);
         }
     }
 
-    private void distributeCards() {
-        for (int i = 0; i < this.numberOfPlayers; i++) {
-            this.deckOfCards.shuffle();
-            this.deal(Math.round(52 / this.numberOfPlayers), i);
-        }
-    }
-
     public void playGame() {
-        this.distributeCards();
         this.setStartingPlayer();
 
         final ArrayList<Card> game = new ArrayList<Card>();
@@ -130,10 +123,12 @@ public class CardGame {
     }
 
     private void setStartingPlayer() {
-        final Card twoOfClubs = new Card("2", "clubs", 2);
         for (int i = 0; i < this.players.size(); i++) {
-            if (this.players.get(i).getHand().contains(twoOfClubs)) {
-                this.setCurrentPlayer(i);
+            for (final Card c : this.players.get(i).getHand()) {
+                if (c.getSuit() == "clubs" && c.getName() == "2" && c.getRank() == 2) {
+                    this.setCurrentPlayer(i);
+                    return;
+                }
             }
         }
     }
