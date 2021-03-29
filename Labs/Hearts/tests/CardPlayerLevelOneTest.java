@@ -3,16 +3,16 @@ package Labs.Hearts.tests;
 import java.util.ArrayList;
 
 import Labs.Hearts.Card;
-import Labs.Hearts.CardPlayerLevelOne;
+import Labs.Hearts.CardPlayerSamNewmark;
 import Labs.Hearts.Deck;
 
 public class CardPlayerLevelOneTest {
     public static void main(String[] args) {
         System.out.println("-----------------------------------------------------------------------------");
-        final CardPlayerLevelOne cp1 = new CardPlayerLevelOne("Player 1", 0, new ArrayList<Card>());
-        final CardPlayerLevelOne cp2 = new CardPlayerLevelOne("Player 2", 0, new ArrayList<Card>());
-        final CardPlayerLevelOne cp3 = new CardPlayerLevelOne("Player 3", 0, new ArrayList<Card>());
-        final CardPlayerLevelOne cp4 = new CardPlayerLevelOne("Player 4", 0, new ArrayList<Card>());
+        final CardPlayerSamNewmark cp1 = new CardPlayerSamNewmark("Player 1", 0, new ArrayList<Card>());
+        final CardPlayerSamNewmark cp2 = new CardPlayerSamNewmark("Player 2", 0, new ArrayList<Card>());
+        final CardPlayerSamNewmark cp3 = new CardPlayerSamNewmark("Player 3", 0, new ArrayList<Card>());
+        final CardPlayerSamNewmark cp4 = new CardPlayerSamNewmark("Player 4", 0, new ArrayList<Card>());
         
         final Deck deck = new Deck();
         deck.shuffle();

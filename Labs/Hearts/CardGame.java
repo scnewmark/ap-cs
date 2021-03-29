@@ -18,9 +18,10 @@ public class CardGame {
         this.numberOfPlayers = playerCount;
         this.currentPlayer = currentPlayer;
 
-        for (int i = 0; i < this.numberOfPlayers; i++) {
-            this.players.add(new CardPlayer(playerNames[i], 0, new ArrayList<Card>()));
-        }
+        this.players.add(new CardPlayerSamNewmark("Sam", 0, new ArrayList<Card>()));
+        this.players.add(new CardPlayer("Beth", 0, new ArrayList<Card>()));
+        this.players.add(new CardPlayer("Steve", 0, new ArrayList<Card>()));
+        this.players.add(new CardPlayer("Lanie", 0, new ArrayList<Card>()));
     }
 
     // Accessors

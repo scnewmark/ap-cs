@@ -5,7 +5,6 @@ import Labs.Hearts.*;
 public class CardGameTest {
     public static void main(String[] args) {
         String [] names = {"Betty","Bob","Sue","Albert"};
-        // game 2
         CardGame game = new CardGame("Hearts",4,names,0);
         System.out.println(">>> Printing game in TestCardGame");
         System.out.println(game);
@@ -40,13 +39,13 @@ public class CardGameTest {
         double percent;
 
         percent = ((int) ((cp1Score /(double) total) * 10000))/ 100.0;
-        System.out.println("Player 1" + " " + percent + "%");
+        System.out.println("Sam" + " " + percent + "%");
 
         percent = ((int) ((cp2Score /(double) total) * 10000))/ 100.0;
-        System.out.println("Player 2" + " " + percent + "%");
+        System.out.println("Beth" + " " + percent + "%");
         percent = ((int) ((cp3Score /(double) total) * 10000))/ 100.0;
-        System.out.println("Player 3" + " " + percent + "%");
+        System.out.println("Steve" + " " + percent + "%");
         percent = ((int) ((cp4Score /(double) total) * 10000))/ 100.0;
-        System.out.println("Player 4" + " " + percent + "%");
+        System.out.println("Lanie" + " " + percent + "%");
     }
 }

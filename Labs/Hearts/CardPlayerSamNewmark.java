@@ -5,9 +5,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CardPlayerLevelOne extends CardPlayer {
+public class CardPlayerSamNewmark extends CardPlayer {
 
-    public CardPlayerLevelOne(final String n, final int s, final ArrayList<Card> h) {
+    public CardPlayerSamNewmark(final String n, final int s, final ArrayList<Card> h) {
         super(n, s, h);
     }
 
@@ -19,8 +19,8 @@ public class CardPlayerLevelOne extends CardPlayer {
         if (this.getHand().contains(twoOfClubs)) { this.getHand().remove(twoOfClubs); return twoOfClubs; }
 
         if (r.isEmpty()) {
-            final int i = (int) (Math.random() * ((this.getHand().size() - 1) + 1));
-            final Card c = this.getHand().get(i); this.getHand().remove(c);
+            this.getHand().sort(Comparator.naturalOrder());
+            final Card c = this.getHand().get(0); this.getHand().remove(c);
             return c;
         }
 
@@ -30,8 +30,8 @@ public class CardPlayerLevelOne extends CardPlayer {
         final List<Card> hearts = this.getHand().stream().filter(c -> c.getSuit() == "hearts").collect(Collectors.toList());
 
         if (sameSuit.size() > 0) {
-            final int i = (int) (Math.random() * ((sameSuit.size() - 1) + 1));
-            final Card c = sameSuit.get(i); this.getHand().remove(c);
+            sameSuit.sort(Comparator.naturalOrder());
+            final Card c = sameSuit.get(0); this.getHand().remove(c);
             return c;
         }
 
@@ -43,8 +43,8 @@ public class CardPlayerLevelOne extends CardPlayer {
             return c;
         }
 
-        final int i = (int) (Math.random() * ((this.getHand().size() - 1) + 1));
-        final Card c = this.getHand().get(i); this.getHand().remove(c);
+        this.getHand().sort(Comparator.reverseOrder());
+        final Card c = this.getHand().get(0); this.getHand().remove(c);
         return c;
     }
 }
