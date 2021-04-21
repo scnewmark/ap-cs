@@ -16,7 +16,4 @@ public class WhatFloor {
         }
         return up - down;
     }
-    public static void main(String[] args) {
-        System.out.print(whatFloor("())"));
-    }
 }
